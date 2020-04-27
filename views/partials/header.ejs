@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Custome CSS -->
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <title>YelpCamp</title>
+  </head>
+  <body>
+	
+
+<!--Navbar -->
+<nav class=" sticky-top mb-1 navbar navbar-expand-lg navbar-light lighten-1">
+  <a class="navbar-brand" href="/">
+    <img src="https://icons.iconarchive.com/icons/ariil/alphabet/256/Letter-Y-icon.png" width="30" height="30" class="d-inline-block align-top" alt="YelpCamp">
+    YelpCamp
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/campgrounds">Campgrounds</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+
+      <li class="nav-item">
+        <%if(!currentUser){%>
+          <a href="/login" class="btn btn-success m-1">Login</a>
+          <a href="/register" class="btn btn-warning m-1">SignUp</a>
+        </li>
+        <%}else{%>
+          <li class="nav-item avatar">
+            <a class="nav-link" href="#">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
+                alt="avatar image" height="35"> <%= currentUser.username %>
+            </a>
+            
+          </li>
+          <li class="nav-item">
+            <a href="/logout" class=" btn btn-danger m-1">Logout</a>
+          </li>
+          
+        <%}%>
+      
+    </ul>
+  </div>
+</nav>
+<!--/.Navbar -->
+<% if(error && error.length >0 && success && success.length >0){ %>
+<div class="container">
+  <% if(success && success.length >0){ %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong><%=success%></strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <%}%>
+    <% if(error && error.length >0){ %>
+    <div class="alert alert-error alert-dismissible fade show" role="alert">
+      <strong><%=error%></strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <%}%>
+</div>
+<%}%>
+
+   

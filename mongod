@@ -1,0 +1,20 @@
+mongod --nojournal
+
+
+
+RESTFUL ROUTES
+
+name    url         verb    desc
+INDEX   /dogs       GET     Display alist of all dog
+NEW     /dogs/new   GET     Disply form to make a new dog
+CREATE  /dogs       POST    Add new dog to DB
+show    /dogs/:id    GET    Show info about one dog 
+
+
+
+REST - a mapping between HTTP routes and CRUD
+
+CREATE  
+READ    /allBlogs
+UPDATE  /destroyBlog/:id
+DESTROY  /destroyBlog/:id

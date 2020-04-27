@@ -1,0 +1,40 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 style="text-align:center;">
+				Add a New Comments to <%= campground.name %>
+			</h1>
+		</div>
+
+		<div class="col-md-6 mx-auto">
+			<form action="/campgrounds/<%=campground._id%>/comments" method="POST">
+				
+				<div class="form-group">
+					<textarea class="form-control" name="comment[text]" placeholder="comment" rows="3"></textarea>
+				</div>
+
+				<!-- <div class="form-group">
+					<input class="form-control" type="text" name="comment[author]" placeholder="author">
+                </div> -->
+                
+				<div class="form-group">
+					<button class="btn btn-outline-success btn-block">
+					Submit
+				</button>
+				</div>
+				
+				
+			</form>
+			<a href="/campgrounds/<%= campground._id %>" class="btn btn-warning">Go back</a>
+		</div>
+	
+
+	
+		
+	</div>
+	
+</div>
+
+<%- include("../partials/footer.ejs") %>
